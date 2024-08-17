@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    
+    <div class="container">
+        <h2>Enter Your Text Or URL</h2>
+        <input type="text" placeholder="Text Or URL" id="qrText">
+
+        <div id="imgBox">
+            <img src="" id="qrImage">
+        </div>
+        <button onclick="generateQR()">Generate QR Code</button>
+    </div>
+
+    <script>
+        let imgBox = document.getElementById("imgBox");
+        let qrImage = document.getElementById("qrImage");
+        let qrText = document.getElementById("qrText");
+
+        function generateQR(){
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+            imgBox.classList.add("show-img");
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+    <script src="script.js"></script>
+</body>
+
+</html>
